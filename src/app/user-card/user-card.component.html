@@ -1,0 +1,12 @@
+
+<mat-list>
+    <ng-container *ngFor="let user of data">
+        <mat-list-item class="user-card">
+            <img mat-list-icon [src]="user.picture.thumbnail" alt="">
+            <div mat-line>{{user.name.title}} {{user.name.first}} {{user.name.last}}</div>
+            <div mat-line class="user-card__second">{{user.location.state}}, {{user.location.country}}</div>
+            <button mat-icon-button mat-button color="primary" (click)="viewUserDetail(user.id.value)">View</button>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+    </ng-container>
+</mat-list>

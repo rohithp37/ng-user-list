@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>User Detail</h2>
+<mat-dialog-content class="mat-typography">
+    <ng-container *ngIf="data">
+        <div class="user-detail">
+            <img [src]="data.picture.large" alt="">
+            <ul>
+                <li>
+                    <span class="user-detail__head">Name :</span> <span>{{ data.name.title }} {{ data.name.first }} {{ data.name.last }}</span>
+                </li>
+                <li>
+                    <span class="user-detail__head">Email :</span> <span>{{ data.email }}</span>
+                </li>
+                <li>
+                    <span class="user-detail__head">Phone :</span> <span>{{ data.cell }}</span>
+                </li>
+                <li>
+                    <span class="user-detail__head">Gender :</span> <span>{{ data.gender }}</span>
+                </li>
+                <li>
+                    <span class="user-detail__head">Address :</span> <span>{{ data.location.street.number }}, {{ data.location.street.name }}, {{ data.location.city }}, {{ data.location.postcode }}, {{ data.location.state }}, {{ data.location.country }}</span>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
